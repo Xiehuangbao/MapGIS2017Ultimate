@@ -1,0 +1,443 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{978F2371-4060-44D8-9428-56738E6E3165}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MapGIS2005</RootNamespace>
+    <AssemblyName>MapGIS2005</AssemblyName>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\MapGIS K9 SP3\Program\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b" />
+    <Reference Include="DevComponents.DotNetBar2, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=10.5.0.3, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0" />
+    <Reference Include="microsoft.office.interop.excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\microsoft.office.interop.excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\System.Windows.Forms.DataVisualization\System.Windows.Forms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttrMappingDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttrMappingDlg.Designer.cs">
+      <DependentUpon>AttrMappingDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckResult.Designer.cs">
+      <DependentUpon>CheckResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeoUpdateDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeoUpdateDlg.Designer.cs">
+      <DependentUpon>GeoUpdateDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeoUpdateParameterSetDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeoUpdateParameterSetDlg.Designer.cs">
+      <DependentUpon>GeoUpdateParameterSetDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapGIsK9Utils.cs" />
+    <Compile Include="PathSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PathSet.Designer.cs">
+      <DependentUpon>PathSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AttrMappingDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AttrMappingDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckResult.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CheckResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeoUpdateDlg.resx">
+      <DependentUpon>GeoUpdateDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeoUpdateParameterSetDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GeoUpdateParameterSetDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PathSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PathSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RowMergeView.resx">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticTable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StatisticTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TopDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopDialogNew.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TopDialogNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAccessoryFile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UpdateAccessoryFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAnnotationDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UpdateAnnotationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateTableForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UpdateTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMPJFile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UpdateMPJFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RowMergeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RowMergeView.designer.cs">
+      <DependentUpon>RowMergeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticTable.Designer.cs">
+      <DependentUpon>StatisticTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopDialog.Designer.cs">
+      <DependentUpon>TopDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopDialogNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopDialogNew.Designer.cs">
+      <DependentUpon>TopDialogNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAccessoryFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAccessoryFile.Designer.cs">
+      <DependentUpon>UpdateAccessoryFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAnnotationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAnnotationDlg.Designer.cs">
+      <DependentUpon>UpdateAnnotationDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateTableForm.Designer.cs">
+      <DependentUpon>UpdateTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMPJFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMPJFile.Designer.cs">
+      <DependentUpon>UpdateMPJFile.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxEditorConnector">
+      <Guid>{C6A5628B-79F2-45A7-A92D-0A9D5F48D21F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxMapXView">
+      <Guid>{20E383FE-FCF0-44B4-9197-1A9DC4C4331C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxMxDocTree">
+      <Guid>{90F90A12-7D3C-4C78-9B19-95742443622A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Axmx_MapLibCtrlLib">
+      <Guid>{ED6FCC2C-FE07-4D4B-8240-202B2F1CA0DE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxWorkSpace">
+      <Guid>{D5735F6F-09B2-46DD-AA47-985CF154AF99}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="EDITEXTENSIONLib">
+      <Guid>{4C5C8361-3AD0-46EC-8582-AE6500986BC6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="EditorConnector">
+      <Guid>{C6A5628B-79F2-45A7-A92D-0A9D5F48D21F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="GISLAYOUTLib">
+      <Guid>{82D678E7-391F-4377-AB8B-5050C285F06D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="GISMAPLib">
+      <Guid>{C480CA9C-C75A-423F-9BAB-D512EE8F553A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="GISRENDERLib">
+      <Guid>{575EF055-F944-4282-B930-59DC69786EF0}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="GISVIEWPORTLib">
+      <Guid>{0C579C4F-8570-41AF-8859-16ED89A1FB29}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="mapXBase">
+      <Guid>{8B965A01-1C96-407E-B3CE-690F9D0CEA71}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MapXView">
+      <Guid>{20E383FE-FCF0-44B4-9197-1A9DC4C4331C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="mc_basObj7Lib">
+      <Guid>{A84565A6-EDE2-4E42-9D9F-A46B8250FF7D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="mc_basXcls7Lib">
+      <Guid>{A318B949-539F-4A7C-9238-ECB56928CD05}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="mc_GisThemeLib">
+      <Guid>{1548B106-F098-43C4-BBB8-196F476C07BD}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="mc_Spc_Anly70Lib">
+      <Guid>{E8C1CB15-DE5E-4C3D-8463-516AA9FCC53A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MPIFRAMELib">
+      <Guid>{C57B5DC6-6B96-4669-A8B0-73D9296A5B54}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MxDocTree">
+      <Guid>{90F90A12-7D3C-4C78-9B19-95742443622A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="mx_MapLibCtrlLib">
+      <Guid>{ED6FCC2C-FE07-4D4B-8240-202B2F1CA0DE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WorkSpace">
+      <Guid>{D5735F6F-09B2-46DD-AA47-985CF154AF99}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
